@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vaibhav Shukla - Product Security Advisor & Architect with 10+ years in Application Security, DevSecOps, Cloud Security, and Secure SDLC. AWS Certified Solutions Architect.">
+    <meta name="keywords" content="Application Security, Product Security, DevSecOps, Cloud Security, SAST, Penetration Testing, Threat Modeling, AWS, Salesforce, Security Engineer">
+    <meta name="author" content="Vaibhav Shukla">
+    <title>Vaibhav Shukla - Product Security Advisor & Architect | Application Security Expert</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #e2e8f0;
+            --secondary-color: #cbd5e0;
+            --accent-color: #7c96ff;
+            --accent-light: #9ab0ff;
+            --text-color: #e2e8f0;
+            --text-medium: #cbd5e0;
+            --text-light: #a0aec0;
+            --light-bg: #1e2538;
+            --dark-bg: #0f1420;
+            --card-bg: #1a1f35;
+            --border-color: #2d3548;
+            --highlight-color: #ff8787;
+            --success-color: #68d391;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #7c96ff 0%, #667eea 100%);
+            --gradient-3: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.25);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.3);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-medium);
+            background: #0f0f1e;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(91, 124, 255, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(102, 126, 234, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(118, 75, 162, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(91, 124, 255, 0.1) 0px, transparent 50%);
+            padding: 40px 20px;
+            font-size: 15px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+
+        * {
+            cursor: default;
+        }
+
+        a, button, .summary-item, .job, .education-card {
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--dark-bg);
+            box-shadow: var(--shadow-xl);
+            border-radius: 24px;
+            overflow: hidden;
+            animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--border-color);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        header {
+            background: var(--dark-bg);
+            color: white;
+            padding: 80px 60px 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(124, 150, 255, 0.15) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 150, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.2em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            color: var(--primary-color);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            font-weight: 400;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.3px;
+            color: var(--text-medium);
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: var(--text-medium);
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            border-radius: 12px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(124, 150, 255, 0.15) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .contact-info a:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .contact-info a:hover {
+            background: var(--light-bg);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(124, 150, 255, 0.3);
+            border-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .contact-info a span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info a:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .summary-item:active,
+        .job:active,
+        .education-card:active,
+        .skill-card:active {
+            transform: translateY(-3px) scale(1.01);
+        }
+
+        .content {
+            padding: 60px;
+            background: var(--dark-bg);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.75em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 12px;
+            display: inline-block;
+            letter-spacing: -0.3px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-2);
+            border-radius: 2px;
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        h2:hover::after {
+            width: 100%;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .summary-item {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.95em;
+            font-weight: 400;
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        .summary-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-2);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .summary-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(124, 150, 255, 0.25);
+            border-color: var(--accent-color);
+        }
+
+        .summary-item:hover::before {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+        .summary-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .summary-item:hover::after {
+            transform: scaleX(1);
+        }
+
+        .education-card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '🎓';
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 4em;
+            opacity: 0.08;
+        }
+
+        .education-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(124, 150, 255, 0.25);
+            border-color: var(--accent-color);
+        }
+
+        .education-card:hover::before {
+            transform: scale(1.2) rotate(10deg);
+            opacity: 0.08;
+            transition: all 0.6s ease;
+        }
+
+        .education-card::before {
+            transition: all 0.4s ease;
+        }
+
+        .education-card h3 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            letter-spacing: -0.2px;
+        }
+
+        .education-card p {
+            color: var(--text-medium);
+            font-size: 0.95em;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .job {
+            margin-bottom: 40px;
+            padding: 35px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background: var(--gradient-2);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .job:hover::before {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+        .job:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(124, 150, 255, 0.25);
+            border-color: var(--accent-color);
+        }
+
+        .job:hover .company {
+            color: var(--accent-color);
+            transform: translateX(4px);
+        }
+
+        .company {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .job-title-wrapper {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .company {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        .date {
+            color: var(--text-light);
+            font-size: 0.9em;
+            font-weight: 500;
+            padding: 6px 16px;
+            background: var(--light-bg);
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .role {
+            color: var(--accent-color);
+            font-size: 1em;
+            font-weight: 500;
+            margin-bottom: 20px;
+            letter-spacing: 0.1px;
+        }
+
+        ul {
+            margin-left: 0;
+            margin-top: 15px;
+            list-style: none;
+        }
+
+        li {
+            margin-bottom: 14px;
+            line-height: 1.7;
+            position: relative;
+            padding-left: 30px;
+            color: var(--text-medium);
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.2em;
+            top: -1px;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        li:hover::before {
+            transform: translateX(4px);
+        }
+
+        li:hover {
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 600;
+            background: rgba(124, 150, 255, 0.15);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+            .job:hover, .summary-item:hover {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .content {
+                padding: 30px 25px;
+            }
+            header {
+                padding: 50px 30px 40px;
+            }
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .job, .education-card, .summary-item {
+                padding: 25px 20px;
+            }
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            .tagline {
+                font-size: 1.1em;
+            }
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
+            margin: 60px 0 40px;
+            opacity: 0.5;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(91, 124, 255, 0.05) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            border-radius: 50%;
+        }
+
+        .skill-card:hover::after {
+            width: 400px;
+            height: 400px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(124, 150, 255, 0.25);
+            border-color: var(--accent-color);
+        }
+
+        .skill-card h3 {
+            color: var(--accent-color);
+            font-size: 1em;
+            margin-bottom: 12px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover h3 {
+            color: var(--primary-color);
+            transform: translateX(4px);
+        }
+
+        .skill-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95em;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .skill-card:hover p {
+            color: var(--text-color);
+        }
+
+        .btn-download {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vaibhav Shukla</h1>
+            <div class="tagline">Product Security Advisor & Architect</div>
+            <div class="contact-info">
+                <a href="mailto:shukla.iitm@gmail.com"><span>✉️ shukla.iitm@gmail.com</span></a>
+                <a href="https://www.linkedin.com/in/vaibhav-shukla" target="_blank"><span>💼 LinkedIn</span></a>
+                <a href="https://medium.com/@vaibhav-shukla" target="_blank"><span>✍️ Medium</span></a>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p style="font-size: 1em; line-height: 1.7; color: var(--text-medium); max-width: 900px; font-weight: 400;">
+                    Product Security Advisor who's spent a decade breaking and building security across BFSI, e-commerce, SaaS, and enterprise software. Specialize in threat modeling, secure code review, and penetration testing for web, mobile, and cloud applications. Whether it's hands-on security assessments, managing bug bounty programs, or leading engineering teams, I bridge the gap between finding vulnerabilities and shipping secure products at scale. Currently leveraging AI-assisted tooling and DevSecOps practices to make security faster and smarter—from SAST/SCA pipelines to achieving FedRAMP compliance without slowing down delivery.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Key Achievements</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        🏆 Discovered critical <span class="highlight">CVE-2020-2955</span> in Oracle Core Banking Application
+                    </div>
+                    <div class="summary-item">
+                        🥇 <strong>Winner</strong> of Techfair - CTF 2019 Competition
+                    </div>
+                    <div class="summary-item">
+                        ⭐ <strong>Star Award</strong> recipient at Synopsys - Individual Category
+                    </div>
+                    <div class="summary-item">
+                        ☁️ <strong>AWS Certified Solutions Architect</strong> Associate
+                    </div>
+                    <div class="summary-item">
+                        🔴 <strong>Certified Red Team Professional</strong> (CRTP)
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Technical Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Security Testing</h3>
+                        <p>Penetration Testing, Vulnerability Assessment, Source Code Review, Threat Modeling, Architecture Risk Analysis</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Security Tools</h3>
+                        <p>Semgrep, Snyk, Checkmarx, DefectDojo, Burp Suite, OWASP ZAP, MobSF, Drozer</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Cloud & Infrastructure</h3>
+                        <p>AWS Security, Azure Key Vault, GCP, Terraform, Container Security, Kubernetes Security</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>DevSecOps</h3>
+                        <p>SAST/DAST Integration, CI/CD Security, SCA, Container Scanning, Security Automation, GitHub Actions</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Programming & Scripting</h3>
+                        <p>Python, Java (for security code review and automation)</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>AI-Assisted Security</h3>
+                        <p>Claude Code, Cursor, Gemini for accelerated design reviews, security assessments, and developer tooling workflows</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        Information Security Professional with <strong>10+ years</strong> of experience in Application Security
+                    </div>
+                    <div class="summary-item">
+                        Led security teams in enabling engineering agility and secure development practices
+                    </div>
+                    <div class="summary-item">
+                        Expert in Vulnerability Assessment, Penetration Testing, and Secure Code Review
+                    </div>
+                    <div class="summary-item">
+                        <strong>AWS Certified Solution Architect Associate</strong>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Certified Red Team Professional</strong>
+                    </div>
+                    <div class="summary-item">
+                        Identified a critical vulnerability in Oracle Core Banking Application <span class="highlight">(CVE-2020-2955)</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="highlight">Winner of Techfair - CTF 2019</span>
+                    </div>
+                    <div class="summary-item">
+                        Awarded with <span class="highlight">Star Award</span> at Synopsys - Individual
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="education-card">
+                    <h3>Indian Institute of Technology (IIT) Madras, Chennai, India</h3>
+                    <p><strong>Master of Technology (M. Tech)</strong> | Aug '14 - May '15</p>
+                    <p><strong>Bachelor of Technology (B. Tech)</strong> | Aug '10 - July '14</p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <section class="section">
+                <h2>Professional Experience</h2>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Salesforce</div>
+                            <div class="role">Product Security Advisor | Architect</div>
+                        </div>
+                        <span class="date">Feb '24 - Present</span>
+                    </div>
+                    <ul>
+                        <li>Lead <strong>end-to-end security reviews</strong> for two major cloud products, covering threat modeling, bug bounty programs, secure code review, GRC compliance, and third-party risk management</li>
+                        <li>Conducted comprehensive security analysis of <strong>Salesforce AI Agentforce features</strong>, identifying and mitigating data privacy and AI model security risks</li>
+                        <li>Enhanced security review efficiency by integrating <strong>AI-assisted tooling (Claude Code, Cursor, Gemini)</strong> into design review, code analysis, and intake workflows, significantly accelerating turnaround while maintaining quality standards</li>
+                        <li>Championed <strong>DevSecOps practices</strong> by implementing secure SDLC controls, automating security workflows, integrating CI/CD security checks, and establishing developer security guardrails</li>
+                        <li>Prioritize and categorize security risks for new feature releases, conducting thorough security assessments and design reviews</li>
+                        <li><strong>Mentor security engineers</strong> on advanced security research, vulnerability analysis, and emerging threat landscapes</li>
+                        <li>Deliver training sessions to educate new hires on Salesforce's security program, fostering a security-first culture</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Atlassian</div>
+                            <div class="role">Product Security Engineer</div>
+                        </div>
+                        <span class="date">Jun '22 - Feb '24</span>
+                    </div>
+                    <ul>
+                        <li>Spearheaded <strong>end-to-end SAST implementation</strong>: piloted and evaluated security tools, collaborated cross-functionally with product teams, established KPIs and metrics, built automated workflows, and integrated SAST into CI/CD pipelines</li>
+                        <li>Led <strong>SAST and SCA initiatives</strong> to achieve stringent FedRAMP compliance requirements, implementing continuous security monitoring and controls aligned with federal authorization standards</li>
+                        <li>Developed comprehensive <strong>secure coding standards</strong> tailored for Atlassian's technology stack, significantly reducing security vulnerabilities in production code</li>
+                        <li>Conducted comprehensive security reviews for new feature releases across core Atlassian products, including threat modeling, penetration testing, and static/dynamic code analysis, identifying and mitigating critical security risks pre-production</li>
+                        <li>Integrated <strong>Semgrep and Snyk Code</strong> into Bitbucket for automated pull request security scanning, enabling shift-left security practices</li>
+                        <li>Implemented <strong>Snyk SCA and Snyk Container</strong> scanning to identify and remediate vulnerabilities in third-party dependencies and container images</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Salesforce</div>
+                            <div class="role">Security Engineer</div>
+                        </div>
+                        <span class="date">Jan '21 - Jun '22</span>
+                    </div>
+                    <ul>
+                        <li>Key member of the <strong>Customer Success and Advocacy Team (CSAT)</strong>, enabling security engineering agility across development teams</li>
+                        <li>Developed a custom <strong>Slack notification system</strong> for streamlined bug report triage and accelerated vulnerability remediation</li>
+                        <li>Automated security risk assessments by implementing continuous auditing of new services and infrastructure deployments</li>
+                        <li>Managed enterprise-wide vulnerability tracking and remediation workflows using <strong>DefectDojo Cloud</strong> platform</li>
+                        <li>Enhanced security review processes by gathering feedback from engineering teams and implementing continuous improvement initiatives</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Synopsys</div>
+                            <div class="role">Security Services Consultant</div>
+                        </div>
+                        <span class="date">Jun '19 - Jan '21</span>
+                    </div>
+                    <ul>
+                        <li>Conducted comprehensive vulnerability assessments and secure code reviews for enterprise web applications across multiple industries</li>
+                        <li>Performed architecture security risk analysis for <strong>hybrid-cloud (AWS)</strong> environments, identifying critical security gaps and recommending solutions</li>
+                        <li>Discovered and reported a critical <strong>Server-Side Template Injection (SSTI)</strong> vulnerability in Oracle Core Banking application <span class="highlight">(CVE-2020-2955)</span></li>
+                        <li>Consulted with banking clients on their <strong>DevSecOps transformation</strong>, including security tool evaluation, integration strategy, and roadmap development</li>
+                        <li>Delivered comprehensive security capability analysis comparing <strong>Azure, Alibaba Cloud, and GCP</strong> service offerings for enterprise cloud migration</li>
+                        <li>Architected a secure and scalable enterprise secrets management solution using <strong>Azure Key Vault</strong>, Terraform infrastructure-as-code, and ServiceNow integration</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Lucideus Technology (Safe Security)</div>
+                            <div class="role">Senior Security Consultant</div>
+                        </div>
+                        <span class="date">Jun '18 - May '19</span>
+                    </div>
+                    <ul>
+                        <li>Performed security assessments for <strong>20+ web applications</strong> in Banking, Financial Services, and Insurance (BFSI) sector, and <strong>5+ e-commerce platforms</strong></li>
+                        <li>Improved <strong>assessment delivery efficiency</strong> through security testing automation and standardized reporting frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title-wrapper">
+                            <div class="company">Photon Interactive</div>
+                            <div class="role">Security Analyst</div>
+                        </div>
+                        <span class="date">July '15 - Jun '18</span>
+                    </div>
+                    <ul>
+                        <li>Conducted security assessments for web applications across IT Management, File Sharing, and Retail e-commerce platforms</li>
+                        <li>Performed comprehensive <strong>static code analysis and secure code reviews</strong> using Checkmarx SAST platform</li>
+                        <li>Conducted mobile application security testing and reverse engineering using <strong>Drozer, ADB, SQLite Browser, and MobSF</strong></li>
+                        <li>Implemented security remediation by integrating <strong>OWASP ESAPI (Enterprise Security API)</strong> into vulnerable web applications</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.job').forEach(job => {
+            job.style.opacity = '0';
+            job.style.transform = 'translateY(20px)';
+            job.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(job);
+        });
+    </script>
+</body>
+</html>
