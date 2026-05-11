@@ -706,6 +706,23 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
+
+        .view-counter {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            color: var(--text-light);
+            font-size: 0.75em;
+            opacity: 0.4;
+            z-index: 1000;
+            font-weight: 400;
+        }
+
+        @media print {
+            .view-counter {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -930,6 +947,19 @@
             job.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(job);
         });
+
+        // Subtle counter
+        fetch('https://hits.sh/vaibhav-shukla-resume.hits.sh.json')
+            .then(response => response.json())
+            .then(data => {
+                const counter = document.getElementById('view-count');
+                if (counter && data.hits) {
+                    counter.textContent = data.hits.toLocaleString();
+                }
+            })
+            .catch(() => {});
     </script>
+
+    <div class="view-counter" id="view-count">...</div>
 </body>
 </html>
